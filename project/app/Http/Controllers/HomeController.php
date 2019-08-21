@@ -22,6 +22,10 @@ class HomeController extends Controller
 		return view('home.AfterLoginAdmin');
 	}
 
+	public function AfterLoginCustomer(Request $req){
+		return view('home.AfterLoginCustomer');
+	}
+
 	public function allbooks(Request $req){
 		return view('home.allbooks');
 	}
@@ -45,6 +49,32 @@ class HomeController extends Controller
 		return redirect()->route('home.banncustomer');
     }
 
+    public function profileup(Request $req){
+
+    	$users->email = $req->session()->get('email');
+
+    	$users = users::find($email);
+
+    	$users->name = $req->name;
+        $users->password = $req->password;
+        $users->email = $req->email;
+        $users->address = $req->address;
+        $users->phonenumber = $req->phonenumber;
+
+    	$user->save();
+
+		return redirect()->route('home.profile');
+    }
+
+    public function profile(Request $req){
+
+    	$email = $req->session()->get('email');
+
+    	$users = users::find($email);
+
+    	return redirect()->route('home.profile', ['value'=>$users]);
+    }
+
 	public function banncustomer(Request $req){
 
 		$users = books::where('type', "customer");
@@ -57,7 +87,7 @@ class HomeController extends Controller
 		return view('home.categories.novel', ['novel'=> $novelList]);
 	}
 
-	public function noveldetails($id){
+	public function details($id){
 
 		$book = books::find($id);
 		return view('home.categories.details', ['book'=>$book]);

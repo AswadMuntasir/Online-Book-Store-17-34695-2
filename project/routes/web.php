@@ -22,9 +22,17 @@ Route::post('/home/login', 'logincontroller@verify');
 
 Route::get('/home/AfterLoginAdmin', 'HomeController@AfterLoginAdmin')->name('home.AfterLoginAdmin');
 
+Route::post('/home/AfterLoginAdmin', 'HomeController@search1');
+
+Route::get('/home/AfterLoginCustomer', 'HomeController@AfterLoginCustomer')->name('home.AfterLoginCustomer');
+Route::post('/home/AfterLoginCustomer', 'HomeController@search1');
+
 Route::get('/home/allbooksAdmin', 'HomeController@allbooksAdmin')->name('home.allbooksAdmin');
 
 Route::get('/home/banncustomer', 'HomeController@banncustomer')->name('home.banncustomer');
+
+Route::get('/home/profile', 'HomeController@profile')->name('home.profile');
+Route::post('/home/profile', 'HomeController@profileup');
 
 Route::get('/home/registration', 'registarcontroller@index')->name('registration.index');
 Route::post('/home/registration', 'registarcontroller@signuppost');

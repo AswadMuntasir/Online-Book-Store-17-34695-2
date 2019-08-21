@@ -26,6 +26,8 @@ class logincontroller extends Controller
 			$req->session()->put('email', $req->email);
 			$req->session()->put('type', $result[0]->type);
 
+			//$req->session()->put('fname', $req->email);
+
 			if($result[0]->type=="admin")
 			{
 				return redirect()->route('home.AfterLoginAdmin');

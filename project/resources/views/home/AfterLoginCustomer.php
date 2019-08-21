@@ -36,9 +36,7 @@
 							<button class="btn p-0-left-right" type="submit">Submit search</button>
 							<input type="text" name="search" placeholder="Search Books" autocomplete="on">
 							&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-							<a href="/home/allbooksAdmin">See All Books</a>&nbsp &nbsp
-							<a href="/home/allusers">See All Users</a>&nbsp &nbsp
-							<a href="/home/banncustomer">Bann Customer</a>&nbsp &nbsp
+							<a href="/home/allbooks">See All Books</a>&nbsp &nbsp
 							<a href="/home/profile">Profile</a>&nbsp &nbsp
 							<a href="/home">Logout</a>&nbsp &nbsp
 						</form>
