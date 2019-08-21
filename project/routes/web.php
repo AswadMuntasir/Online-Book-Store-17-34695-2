@@ -26,6 +26,12 @@ Route::get('/home/allbooks', 'homecontroller@allbooks')->name('home.allbooks');
 
 Route::get('/home/allusers', 'homecontroller@allusers')->name('home.allusers');
 
+Route::get('/home/categories/novel', 'homecontroller@novel')->name('home.categories.novel');
+
+Route::get('/home/categories/literature', 'homecontroller@literature')->name('home.categories.literature');
+
+Route::get('/home/categories/scifi', 'homecontroller@scifi')->name('home.categories.scifi');
+
 Route::get('/home/livesearchBooks', 'homecontroller@livesearchBooks')->name('home.livesearchBooks');
 
 Route::get('/home/livesearchUsers', 'homecontroller@livesearchUsers')->name('home.livesearchUsers');

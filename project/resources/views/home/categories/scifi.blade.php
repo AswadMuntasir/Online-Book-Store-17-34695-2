@@ -26,7 +26,7 @@
 									<th>Details</th>
 									<th>Cart</th>
 								</tr>
-								@foreach($novel as $value)
+								@foreach($scifi as $value)
 								<tr>
 									<td>{{$value['id']}}</td>
 									<td>{{$value['name']}}</td>

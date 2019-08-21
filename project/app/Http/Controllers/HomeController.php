@@ -20,6 +20,24 @@ class HomeController extends Controller
 		return view('home.allusers');
 	}
 
+	public function novel(Request $req){
+		$novelList = books::where('categories', "novel");
+
+		return view('home.categories.novel', ['novel'=> $novelList]);
+	}
+
+	public function literature(Request $req){
+		$literatureList = books::where('categories', "literature");
+
+		return view('home.categories.literature', ['literature'=> $literatureList]);
+	}
+
+	public function scifi(Request $req){
+		$scifiList = books::where('categories', "scifi");
+
+		return view('home.categories.scifi', ['scifi'=> $scifiList]);
+	}
+
 	public function livesearchUsers(Request $request)
 	{
 		if($request->ajax())
