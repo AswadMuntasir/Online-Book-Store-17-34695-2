@@ -17,7 +17,7 @@
 					<div class="panel-heading">Search All Books Data</div>
 						<div class="panel-body">
 							<div class="form-group">
-								<input type="text" name="search" id="search" class="form-control" placeholder="Search Freelancer Data" />
+								<input type="text" name="search" id="search" class="form-control" placeholder="Search Users Data" />
 							</div>
 							<div class="table-responsive">
 							<h3 align="center">Total Data : <span id="total_records"></span></h3>
@@ -26,10 +26,10 @@
 								<tr>
 									<th>ID</th>
 									<th>Name</th>
-									<th>Categories</th>
-									<th>Price</th>
-									<th>Author</th>
-									<th>Add to cart</th>
+									<th>Email</th>
+									<th>Address</th>
+									<th>Phone number</th>
+									<th>Status</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -54,7 +54,7 @@
 		function fetch_customer_data(query = '')
 		{
 			$.ajax({
-				url:"{{ route('home.livesearchBooks') }}",
+				url:"{{ route('home.livesearchUsers') }}",
 				method:'GET',
 				data:{query:query},
 				dataType:'json',
