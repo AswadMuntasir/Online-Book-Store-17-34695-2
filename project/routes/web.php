@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'homecontroller@index')->name('home.index');
+
+Route::get('/home/login', 'logincontroller@index')->name('login.index');
+Route::post('/home/login', 'logincontroller@verify');
+
+Route::get('/home/registration', 'registarcontroller@index')->name('registration.index');
+Route::post('/home/registration', 'registarcontroller@signuppost');
