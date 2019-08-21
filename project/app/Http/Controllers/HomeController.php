@@ -12,6 +12,16 @@ class HomeController extends Controller
 		return view('home.index');
 	}
 
+	public function search1(Request $req){
+		$search = $req->search;
+		$user = books::where('name', $search)->get();
+		return view('home.search',['books'=>$user]);
+	}
+	
+	public function AfterLoginAdmin(Request $req){
+		return view('home.AfterLoginAdmin');
+	}
+
 	public function allbooks(Request $req){
 		return view('home.allbooks');
 	}
@@ -20,11 +30,38 @@ class HomeController extends Controller
 		return view('home.allusers');
 	}
 
+	public function allbooksAdmin(Request $req){
+		$book = books::all();
+		return view('home.allbooksAdmin', ['book'=>$book]);
+	}
+
+	public function banncustomerA(Request $req, $id){
+
+    	$user = users::find($id);
+
+        $user->status = "Deactive";
+    	$user->save();
+
+		return redirect()->route('home.banncustomer');
+    }
+
+	public function banncustomer(Request $req){
+
+		$users = books::where('type', "customer");
+		return view('home.banncustomer', ['users'=>$users]);
+	}
+
 	public function novel(Request $req){
 		$novelList = books::where('categories', "novel");
 
 		return view('home.categories.novel', ['novel'=> $novelList]);
 	}
+
+	public function noveldetails($id){
+
+		$book = books::find($id);
+		return view('home.categories.details', ['book'=>$book]);
+    }
 
 	public function literature(Request $req){
 		$literatureList = books::where('categories', "literature");
@@ -70,7 +107,6 @@ class HomeController extends Controller
 							<td>'.$row->phonenumber.'</td>
 							<td>'.$row->workdetails.'</td>
 							<td>'.$row->Status.'</td>
-							<td><a href="/home/users/details/'.$row->id.'">Change Staus</a></td>
         				</tr>
         			';
        			}
@@ -100,7 +136,7 @@ public function livesearchBooks(Request $request)
 	      	if($query != '')
 	      	{
 		       	$data = books::where('name', 'like', '%'.$query.'%')
-					->orWhere('categoris', 'like', '%'.$query.'%')
+					->orWhere('categories', 'like', '%'.$query.'%')
 					->orderBy('id', 'desc')
 		        	->get();
 	      	}

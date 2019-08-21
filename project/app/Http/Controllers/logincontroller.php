@@ -16,6 +16,7 @@ class logincontroller extends Controller
 
 		$result = users::where('email', $req->email)
 				->where('password', $req->password)
+				->where('status', "Active")
 				->get();
 		
 		//echo $result[0]->type;
