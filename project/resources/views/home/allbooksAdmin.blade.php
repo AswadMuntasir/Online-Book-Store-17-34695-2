@@ -14,7 +14,7 @@
 				<th>Author</th>
 				<th>Add to cart</th>
 			</tr>
-			@foreach($novel as $value)
+			@foreach($book as $value)
 			<tr>
 				<td>{{$value['id']}}</td>
 				<td>{{$value['name']}}</td>
