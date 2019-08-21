@@ -44,9 +44,9 @@
 				</div>
 				<div>
 					<h1>Book Categories</h1>
-					<a href="home/categories/novel">Novel</a> &nbsp &nbsp 
-					<a href="home/categories/literature">Literature</a> &nbsp &nbsp
-					<a href="home/categories/scifi">Sci-Fi</a>
+					<a href="/home/categories/novel">Novel</a> &nbsp &nbsp 
+					<a href="/home/categories/literature">Literature</a> &nbsp &nbsp
+					<a href="/home/categories/scifi">Sci-Fi</a>
 				</div>
 			</tr>
 		</table>
